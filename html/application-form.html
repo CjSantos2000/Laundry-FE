@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg shadow" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">THE KABARKADOGS</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-pets.html">Our Pets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="donate.html">Donate</a></li>
+                <li><a class="dropdown-item" href="book-appointment.html">Book Appointment</a></li>
+                <li><a class="dropdown-item" href="recommendations.html">Recommendations</a></li>
+                <li><a class="dropdown-item" href="faqs.html">FAQs</a></li>
+                <li><a class="dropdown-item" href="adoption-stories.html">Adoption Stories</a></li>
+                <li><a class="dropdown-item" href="rescue-stories.html">Rescue Stories</a></li>
+                <li><a class="dropdown-item" href="our-policies.html">Our Policies</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Notification</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button class="btn btn-kabarkadogs me-2">Login</button>
+            <button class="btn btn-outline-kabarkadogs">Register</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="p-5 text-center rounded-3 mt-5">
+            <h1 class="color-kabarkadogs fw-bold hero-title position-relative display-3">Application Form</h1>
+            <hr class="featurette-divider" />
+        </div>
+    </div>
+
+    <div class="bg-kabarkadogs marketing section-padding-top">
+        <div class="container">
+          <div class="row featurette">
+            <div class="col-12 d-flex flex-column align-items-center">
+              <h2 class="fw-normal lh-1 color-kabarkadogs pt-3 fw-semibold">
+                Foster Application Form
+              </h2>
+              <p class="lead color-kabarkadogs pt-4 text-center color-kabarkadogs-gold fw-medium" style="max-width: 600px">
+                KabarkaDogs Foster Application Form Completing this application is the best way to ensure a positive experience for both you and the pets.
+              </p>
+              <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="first_name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="first_name">
+                </div>
+                <div class="col-md-4">
+                    <label for="middle_name" class="form-label">Middle Name:</label>
+                    <input type="text" class="form-control" id="middle_name">
+                </div>
+                <div class="col-md-4">
+                    <label for="last_name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name">
+                </div>
+                <div class="col-md-2">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="text" class="form-control" id="age">
+                </div>
+                <div class="col-md-5">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="col-md-5">
+                    <label for="phone" class="form-label">Phone:</label>
+                    <input type="text" class="form-control" id="phone">
+                </div>
+                <div class="col-12">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" class="form-control" id="address">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">City:</label>
+                    <select id="inputState" class="form-select">
+                        <option disabled="" value="" selected="">Select City/Municipality</option>
+                        <option value="Cavite City">Cavite City</option>
+                        <option value="Kawit, Cavite">Kawit, Cavite</option>
+                        <option value="Noveleta, Cavite">Noveleta, Cavite</option>
+                        <option value="Rosario, Cavite">Rosario, Cavite</option>
+                        <option value="Bacoor City">Bacoor City</option>
+                        <option value="Imus City">Imus City</option>
+                        <option value="Dasmarinas City">Dasmarinas City</option>
+                        <option value="Carmona, Cavite">Carmona, Cavite</option>
+                        <option value="General Mariano Alvarez, Cavite">General Mariano Alvarez, Cavite</option>
+                        <option value="General Trias City">General Trias City</option>
+                        <option value="Silang, Cavite">Silang, Cavite</option>
+                        <option value="Amadeo, Cavite">Amadeo, Cavite</option>
+                        <option value="Indang, Cavite">Indang, Cavite</option>
+                        <option value="Tanza, Cavite">Tanza, Cavite</option>
+                        <option value="Tagaytay, Cavite">Tagaytay, Cavite</option>
+                        <option value="Alfonso, Cavite">Alfonso, Cavite</option>
+                        <option value="General Emilio Aguinaldo, Cavite">General Emilio Aguinaldo, Cavite</option>
+                        <option value="Magallanes, Cavite">Magallanes, Cavite</option>
+                        <option value="Maragondon, Cavite">Maragondon, Cavite</option>
+                        <option value="Mendez, Cavite">Mendez, Cavite</option>
+                        <option value="Naic, Cavite">Naic, Cavite</option>
+                        <option value="Ternate, Cavite">Ternate, Cavite</option>  
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="barangay" class="form-label">Barangay:</label>
+                    <input type="text" class="form-control" id="barangay">
+                </div>
+                <div class="col-md-2">
+                  <label for="zip_ciode" class="form-label">Zip:</label>
+                  <input type="number" class="form-control" id="zip_ciode">
+                </div>
+                <div class="col-12">
+                    <label for="kept" class="form-label">When this pet is outdoors, how will he/she be kept? (fence, chain, line, kennel etc.):</label>
+                    <input type="text" class="form-control" id="kept">
+                </div>
+                <div class="col-12">
+                    <label for="petcompanion" class="form-label">Why do you want this pet?:</label>
+                    <select id="petcompanion" name="petscompanion" class="form-select">
+                        <option name="pet-companion" value="Companion for child">Companion for child</option> 
+                        <option type="checkbox" name="pet-companion" value="Companion for other pets">Companion for other pets</option>
+                        <option type="checkbox" name="pet-companion" value="Companion for self">Companion for self</option>
+                        <option type="checkbox" name="pet-companion" value="Security">Security</option>
+                        <option type="checkbox" name="pet-companion" value="House pet">House pet</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="petcompanion" class="form-label">If other, please explain:</label>
+                    <input type="text" class="form-control" id="petcompanion">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Are you willing to provide your monthly/yearly medicines and vaccinations at your own expense?:</label>
+                    <select id="willing_to_provide" class="form-select">
+                        <option value="Yes">Yes</option> 
+                        <option value="No">No</option> 
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="two_personal" class="form-label">Please provide any two personal references NOT related to you:</label>
+                    <input type="text" class="form-control" id="two_personal">
+                </div>
+                <div class="col-12">
+                    <label for="information" class="form-label">Please include any information would you like for us to consider when reviewing your foster application approval:</label>
+                    <input type="text" class="form-control" id="information">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Which pet(s) are you considering?:</label>
+                    <select id="pet" class="form-select">
+                        <option value="Dog">Dog</option> 
+                        <option value="Cat">Cat</option> 
+                    </select>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                    I agree with The KabarkaDogs terms and conditions.
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-kabarkadogs">Submit</button>
+                </div>
+              </form>
+            </div>
+            <hr class="featurette-divider" />
+          </div>
+        </div>
+      </div>
+
+      <footer class="pt-5 bg-kabarkadogs-2">
+        <div class="container pb-5">
+        <div class="row">
+          <div class="col-12 col-md-4 mb-3">
+            <h2 class="fw-bold color-kabarkadogs mb-5">The KabarkaDogs</h2>
+            <ul class="nav flex-column">
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold"
+                  >Is a temporary shelter for abandoned and rescued dogs and cats from cruelty or neglected with the goal of rehabilitating and placing them in loving homes.</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <h2 class="fw-bold color-kabarkadogs mb-5">Contact</h2>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold"
+                  >Address: Dra. Salamanca St., San Antonio, Cavite City,
+                  Philippines 4100</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold"
+                  >Phone: 0917 716 7271</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold"
+                  >Email: thekabarkadogs@gmail.com</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold"
+                  >Facebook: The KabarkaDogs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h2 class="fw-bold color-kabarkadogs mb-5">Section</h2>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">About Us</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Our Pets</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Donate</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Book Appointment</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-2 mb-3">
+            <ul class="nav flex-column" style="margin-top: 90px">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Recommendations</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">FAQs</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Adoption Stories</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 fw-bold">Rescue Stories</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+        <div 
+        style="background: #f5deb3;">
+          <div
+          class="container d-flex flex-column flex-sm-row justify-content-between py-4 border-top"
+        >
+          <p class="color-kabarkadogs">© The KabarkaDogs 2022</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="#"
+                ><i class="fa-brands fa-facebook color-kabarkadogs" style="font-size: 30px"></i
+              ></a>
+            </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="#"
+                ><i class="fa-brands fa-instagram color-kabarkadogs" style="font-size: 30px"></i
+              ></a>
+            </li>
+            <li class="ms-3">
+              <a class="link-body-emphasis" href="#"
+                ><i class="fa-brands fa-twitter color-kabarkadogs" style="font-size: 30px"></i
+              ></a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </footer>
+      <button onclick="scrollToTop()" id="scrollToTopBtn" title="Scroll to Top" class="rounded-circle">
+        <i class="fa-solid fa-arrow-up" style="font-size: 20px;"></i>
+      </button>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

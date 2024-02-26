@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+body {
+  background: #ffffff;
+}
+:root {
+  --bd-kabarkadogs: #0b5ed7;
+  --bd-kabarkadogs-rgb: 115, 73, 0;
+  --bd-kabarkadogs-bg: #0b5ed7;
+}
+.btn-kabarkadogs {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-kabarkadogs-bg);
+  --bs-btn-border-color: var(--bd-kabarkadogs-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: rgba(var(--bd-kabarkadogs-rgb), 0.9);
+  --bs-btn-hover-border-color: rgba(var(--bd-kabarkadogs-rgb), 0.9);
+  --bs-btn-focus-shadow-rgb: var(--bd-kabarkadogs-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: rgba(var(--bd-kabarkadogs-rgb), 0.8);
+  --bs-btn-active-border-color: rgba(var(--bd-kabarkadogs-rgb), 0.8);
+}
+.btn-outline-kabarkadogs {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: #0b5ed7;
+  --bs-btn-bg: transparent; /* Transparent background for outline button */
+  --bs-btn-border-color: #0b5ed7; /* Custom outline color #0b5ed7 */
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #734910; /* 10% darker version of #0b5ed7 */
+  --bs-btn-hover-border-color: #734910; /* 10% darker version of #0b5ed7 */
+  --bs-btn-focus-shadow-rgb: #0b5ed7; /* Custom outline color #0b5ed7 */
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #734920; /* 20% darker version of #0b5ed7 */
+  --bs-btn-active-border-color: #734920; /* 20% darker version of #0b5ed7 */
+}
+#navbar {
+  height: 90px;
+  background: #ffffff;
+  transition: height 0.3s;
+}
+.nav-link {
+  color: var(--bd-kabarkadogs-bg);
+}
+.color-kabarkadogs {
+  color: var(--bd-kabarkadogs-bg) !important;
+}
+.color-kabarkadogs-gold {
+  color: #fdbe33;
+}
+#navbar .navbar-brand,
+.dropdown-item {
+  color: var(--bd-kabarkadogs-bg);
+}
+#navbar .navbar-brand {
+  margin: 0;
+  font-size: 25px;
+  line-height: 0px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+#navbar .navbar-collapse {
+  z-index: 99;
+  background: #ffffff;
+  border-radius: 20px;
+  /* padding: 20px; */
+}
+#navbar .nav-link {
+  font-size: 18px;
+}
+#navbar .nav-link,
+.dropdown-item:hover {
+  color: #0b5ed7;
+}
+.bg-kabarkadogs-2 {
+  background: #ffffff !important;
+}
+.bg-kabarkadogs {
+  background: #f3f6fe;
+}
+.section-padding-top {
+  padding-top: 100px;
+}
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background-color: var(--bd-kabarkadogs-bg);
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #0b5ed7;
+}
+.hero-title::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 3px;
+  left: calc(50% - 50px);
+  bottom: -20px;
+  background: #0b5ed7;
+}
+.nav-link.active {
+  color: var(--bd-kabarkadogs-bg) !important;
+  font-weight: bold;
+}

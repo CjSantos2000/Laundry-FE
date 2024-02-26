@@ -1,0 +1,198 @@
+Table roles {
+  id integer
+  name string
+}
+
+Table users {
+  id integer
+  role_id integer
+  first_name string
+  last_name string
+  address string
+  phone_number string
+  email string
+  password string
+  created_at timestamp
+  upadted_at timestamp
+}
+
+Table transaction_modes{
+  id integer
+  name string
+}
+
+Table services{
+  id integer
+  name string
+}
+
+Table additional_services{
+  id integer
+  service_id integer
+  name string
+}
+
+Table cart_items{
+  id integer
+  customer_id integer 
+  transaction_mode_id integer
+  shop_admin_id integer
+  service_id integer
+  name string
+  quantity integer
+  weight integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table payment_methods{
+  id integer
+  name string
+}
+
+Table transactions{
+  id integer
+  shop_admin_id integer
+  customer_id integer
+  status_id integer
+  name string
+  address string 
+  date timestamp
+  time time 
+  special_instruction string
+  payment_method_id integer
+  payment_screenshot file
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table transaction_items{
+  id integer
+  transaction_id integer
+  service_id integer
+  transaction_mode_id integer
+  name string
+  quantity integer
+  weight integer 
+}
+
+Table transaction_riders{
+  id integer
+  transaction_id integer
+  rider_id integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table transaction_rider_statuses{
+  id integer
+  transaction_rider_id integer
+  status_id integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table statuses{
+  id integer
+  name string
+}
+
+Table shop_admin_subscription{
+  id integer
+  shop_admin_id integer
+  status_id integer
+  payment_screenshot file
+  created_at timestamp
+  expiration_at timestamp
+}
+
+Table inventory{
+  id integer
+  shop_admin_id integer
+  transaction_id integer
+  name string
+  quantity string
+  type string
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table announcements{
+  id integer
+  shop_admin_id integer
+  title string
+  image file
+  created_at timestamp
+  expiration_at timestamp
+}
+
+Table laundry_services{
+  id integer
+  shop_admin_id integer
+  name string
+  price integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table machine_types{
+  id integer
+  name string
+}
+
+Table machines{
+  id integer
+  shop_admin_id integer
+  machine_type_id integer
+  status_id integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Ref: "roles"."id" < "users"."role_id"
+
+Ref: "services"."id" < "additional_services"."service_id"
+
+Ref: "users"."id" < "transactions"."shop_admin_id"
+
+Ref: "users"."id" < "transactions"."customer_id"
+
+Ref: "payment_methods"."id" < "transactions"."payment_method_id"
+
+Ref: "transactions"."id" < "transaction_items"."transaction_id"
+
+Ref: "transactions"."id" < "transaction_riders"."transaction_id"
+
+Ref: "users"."id" < "transaction_riders"."rider_id"
+
+Ref: "services"."id" < "transaction_items"."service_id"
+
+Ref: "transaction_modes"."id" < "transaction_items"."transaction_mode_id"
+
+Ref: "transaction_riders"."id" < "transaction_rider_statuses"."transaction_rider_id"
+
+Ref: "statuses"."id" < "transaction_rider_statuses"."status_id"
+
+Ref: "statuses"."id" < "transactions"."status_id"
+
+Ref: "users"."id" < "shop_admin_subscription"."shop_admin_id"
+
+Ref: "statuses"."id" < "shop_admin_subscription"."status_id"
+
+Ref: "transactions"."id" < "inventory"."transaction_id"
+
+Ref: "machine_types"."id" < "machines"."machine_type_id"
+
+Ref: "users"."id" < "machines"."shop_admin_id"
+
+Ref: "users"."id" < "announcements"."shop_admin_id"
+
+Ref: "users"."id" < "laundry_services"."shop_admin_id"
+
+Ref: "transaction_modes"."id" < "cart_items"."transaction_mode_id"
+
+Ref: "users"."id" < "cart_items"."shop_admin_id"
+
+Ref: "services"."id" < "cart_items"."service_id"
+
+Ref: "users"."id" < "cart_items"."customer_id"

@@ -1,0 +1,53 @@
+washeaselaundry flow
+
+1. customers
+-login
+-register
+-edit profile
+-change password
+-nearby laundry shops
+-laundry histories
+-drop off
+-drop off and delivery 
+-self service
+-scheduled self service
+-scheduled pick up and delivery
+-scheduled pick up
+-payment (gcash or cash)
+-feedback
+-real time chat
+-track the rider
+
+2. riders
+-login
+-register
+-edit profile
+-change password
+-deliveries
+-delivery status
+
+3. staffs
+-login
+-register
+-edit profile
+-change password
+-customer reviews (scheduled and walk ins)
+-real time chat
+
+4. shop admin
+-login
+-register
+-edit profile
+-change password
+-staffs crud
+-riders crud
+-dashboard
+-reports
+
+5. super admin
+-login
+-edit profile
+-change password
+-dashboard
+-reports
+-shop admin reviews
