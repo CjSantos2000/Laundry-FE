@@ -11,6 +11,9 @@ import { Card, Title, Paragraph } from "react-native-paper";
 import axios from "axios";
 import { styles } from "../../styles/Box";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const TransactionHistory = ({ navigation }) => {
   const [transactions, setTransactions] = useState([]);
 
@@ -20,7 +23,7 @@ const TransactionHistory = ({ navigation }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/transactions`,
+          `${API_BASE_URL}/api/customers/transactions`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

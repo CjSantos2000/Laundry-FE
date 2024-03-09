@@ -4,6 +4,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "../../styles/Form";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const AddTransactionItem = ({ route, navigation }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -36,7 +39,7 @@ const AddTransactionItem = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("staffToken");
 
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/staffs/cart/add`,
+        `${API_BASE_URL}/api/staffs/cart/add`,
         {
           name: name,
           quantity: quantity,

@@ -5,6 +5,9 @@ import { styles } from "../../styles/Form";
 import axios from "axios";
 import { AirbnbRating } from "react-native-ratings";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Feedback = ({ route, navigation }) => {
   const { transaction_id } = route.params;
   const [message, setMessage] = useState("");
@@ -16,7 +19,7 @@ const Feedback = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("customerToken");
 
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/customers/feedback/add`,
+        `${API_BASE_URL}/api/customers/feedback/add`,
         {
           message: message,
           transaction_id: transaction_id,

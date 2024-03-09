@@ -4,6 +4,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import { Feather } from "@expo/vector-icons";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 export default function Account({ navigation }) {
   const [userData, setUserData] = useState({
     id: null,
@@ -41,7 +44,7 @@ export default function Account({ navigation }) {
 
       if (token) {
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/logout`,
+          `${API_BASE_URL}/api/staffs/logout`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -71,7 +74,7 @@ export default function Account({ navigation }) {
         {userData.image !== null ? (
           <Image
             source={{
-              uri: `${"http://192.168.133.240:8000"}/storage/${userData.image}`,
+              uri: `${API_BASE_URL}/storage/${userData.image}`,
             }}
             style={styles.image}
           />

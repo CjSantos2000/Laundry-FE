@@ -10,6 +10,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Card, Title, Paragraph } from "react-native-paper";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const CartHistory = ({ route, navigation }) => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -19,7 +22,7 @@ const CartHistory = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/cart`,
+          `${API_BASE_URL}/api/customers/cart`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

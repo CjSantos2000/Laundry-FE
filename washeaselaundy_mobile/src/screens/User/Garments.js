@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Card, Title, Paragraph } from "react-native-paper";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Garments = ({ route, navigation }) => {
   const {
     transaction_mode_id,

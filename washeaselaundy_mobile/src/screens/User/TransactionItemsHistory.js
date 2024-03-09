@@ -12,6 +12,9 @@ import axios from "axios";
 import { Feather } from "@expo/vector-icons";
 import { styles } from "../../styles/Box";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const TransactionItemsHistory = ({ route }) => {
   const { transaction_id } = route.params;
   const [transaction, setTransaction] = useState(null);
@@ -23,7 +26,7 @@ const TransactionItemsHistory = ({ route }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/transactions/${transaction_id}`,
+          `${API_BASE_URL}/api/customers/transactions/${transaction_id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -57,7 +60,7 @@ const TransactionItemsHistory = ({ route }) => {
       const token = await AsyncStorage.getItem("customerToken");
 
       const response = await axios.delete(
-        `${"http://192.168.133.240:8000"}/api/customers/feedback/${id}`,
+        `${`${API_BASE_URL}/api/customers/login`}/api/customers/feedback/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -19,7 +19,7 @@ const AddMachine = ({ navigation }) => {
       const token = await AsyncStorage.getItem("shopAdminToken");
 
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/shop_admins/machines/add`,
+        `${API_BASE_URL}/api/shop_admins/machines/add`,
         {
           name: name,
           machine_type_id: machineType,

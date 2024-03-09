@@ -4,6 +4,9 @@ import { Text, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const ViewLaundryService = ({ route }) => {
   const { service_id } = route.params;
   const [services, setServices] = useState({});
@@ -14,7 +17,7 @@ const ViewLaundryService = ({ route }) => {
         const token = await AsyncStorage.getItem("shopAdminToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/shop_admins/services/${service_id}`,
+          `${API_BASE_URL}/api/shop_admins/services/${service_id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

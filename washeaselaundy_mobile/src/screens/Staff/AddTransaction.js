@@ -38,6 +38,9 @@ import { Card, Title, Paragraph } from "react-native-paper";
 import axios from "axios";
 import { styles as style3 } from "../../styles/Form";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const AddTransaction = ({ route, navigation }) => {
   const [cartItems, setCartItems] = useState([]);
   const [render, setRender] = useState(null);
@@ -63,7 +66,7 @@ const AddTransaction = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("staffToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/cart`,
+          `${API_BASE_URL}/api/staffs/cart`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -89,7 +92,7 @@ const AddTransaction = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("staffToken");
 
       const response = await axios.delete(
-        `${"http://192.168.133.240:8000"}/api/staffs/cart/${id}`,
+        `${API_BASE_URL}/api/staffs/cart/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -12,6 +12,9 @@ import { Card, Title, Paragraph } from "react-native-paper";
 import axios from "axios";
 import { styles as style3 } from "../../styles/Form";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Cart = ({ route, navigation }) => {
   const [shopAdmins, setShopAdmins] = useState([]);
   const [cartItems, setCartItems] = useState([]);
@@ -41,7 +44,7 @@ const Cart = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/shop_admins`,
+          `${API_BASE_URL}api/customers/shop_admins`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -60,7 +63,7 @@ const Cart = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/cart`,
+          `${API_BASE_URL}/api/customers/cart`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -87,7 +90,7 @@ const Cart = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("customerToken");
 
       const response = await axios.delete(
-        `${"http://192.168.133.240:8000"}/api/customers/cart/${id}`,
+        `${API_BASE_URL}/api/customers/cart/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

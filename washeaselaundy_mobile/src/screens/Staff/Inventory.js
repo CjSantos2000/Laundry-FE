@@ -12,6 +12,9 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Inventory = ({ navigation, route }) => {
   const { result } = route.params;
   const [inventories, setInventories] = useState([]);
@@ -24,7 +27,7 @@ const Inventory = ({ navigation, route }) => {
         const token = await AsyncStorage.getItem("staffToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/inventories`,
+         `${API_BASE_URL}/api/staffs/inventories`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -47,7 +50,7 @@ const Inventory = ({ navigation, route }) => {
       const token = await AsyncStorage.getItem("staffToken");
 
       const response = await axios.delete(
-        `${"http://192.168.133.240:8000"}/api/staffs/inventories/${id}`,
+        `${API_BASE_URL}/api/staffs/inventories/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

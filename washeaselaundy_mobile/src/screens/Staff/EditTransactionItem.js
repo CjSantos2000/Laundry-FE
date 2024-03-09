@@ -5,6 +5,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import DropDownPicker from "react-native-dropdown-picker";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const EditTransactionItem = ({ route, navigation }) => {
   const { transaction_item_id, transaction_mode_id } = route.params;
   const [machine, setMachine] = useState(0);
@@ -36,7 +39,7 @@ const EditTransactionItem = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("staffToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/transactions/machines`,
+          `${API_BASE_URL}/api/staffs/transactions/machines`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -59,7 +62,7 @@ const EditTransactionItem = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("staffToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/transactions/item/${transaction_item_id}`,
+          `${API_BASE_URL}/api/staffs/transactions/item/${transaction_item_id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -83,7 +86,7 @@ const EditTransactionItem = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("staffToken");
 
       const response = await axios.put(
-        `${"http://192.168.133.240:8000"}/api/staffs/transactions/item/${transaction_item_id}`,
+        `${API_BASE_URL}/api/staffs/transactions/item/${transaction_item_id}`,
         {
           machine_id: machine,
           status_id: status,

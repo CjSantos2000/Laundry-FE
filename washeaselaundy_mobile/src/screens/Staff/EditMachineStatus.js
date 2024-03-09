@@ -5,6 +5,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import DropDownPicker from "react-native-dropdown-picker";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const EditTransactionItem = ({ route, navigation }) => {
   const { machine_id, transaction_id, machine_status_id } = route.params;
   const [status, setStatus] = useState(machine_status_id);
@@ -19,7 +22,7 @@ const EditTransactionItem = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("staffToken");
 
       const response = await axios.put(
-        `${"http://192.168.133.240:8000"}/api/staffs/transactions/edit_machine_status/${machine_id}`,
+        `${API_BASE_URL}/api/staffs/transactions/edit_machine_status/${machine_id}`,
         {
           status_id: status,
         },

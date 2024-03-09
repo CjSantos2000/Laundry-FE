@@ -4,6 +4,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from "../../styles/Form";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Registration = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -29,7 +32,7 @@ const Registration = ({ navigation }) => {
     setError("");
     try {
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/customers/register`,
+        `${API_BASE_URL}/api/customers/register`,
         {
           first_name: firstName,
           last_name: lastName,
@@ -40,15 +43,15 @@ const Registration = ({ navigation }) => {
           password_confirmation: passwordConfirmation,
         }
       );
-
+      
       const { token, user } = response.data.response;
 
       await AsyncStorage.setItem("customerToken", token);
       await AsyncStorage.setItem("customerData", JSON.stringify(user));
-
+        
       navigation.navigate("User Tab Navigator", { screen: "Dashboard" });
     } catch (error) {
-      // console.log("hey");
+       console.log(error);
       setError("Invalid credentials");
     }
   };

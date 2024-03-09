@@ -4,6 +4,9 @@ import { styles } from "../../styles/Form";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const AddStaff = ({ navigation }) => {
   const [error, setError] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -20,7 +23,7 @@ const AddStaff = ({ navigation }) => {
       const token = await AsyncStorage.getItem("shopAdminToken");
 
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/shop_admins/staffs/add`,
+        `${API_BASE_URL}/api/shop_admins/staffs/add`,
         {
           first_name: firstName,
           last_name: lastName,
