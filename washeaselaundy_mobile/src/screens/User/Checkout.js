@@ -6,6 +6,9 @@ import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Checkout = ({ route, navigation }) => {
   const { shop_admin_id, price } = route.params;
   const [name, setName] = useState("");
@@ -48,7 +51,7 @@ const Checkout = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("customerToken");
 
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/customers/transactions/add`,
+        `${API_BASE_URL}/api/customers/transactions/add`,
         {
           shop_admin_id: shop_admin_id,
           name: name,

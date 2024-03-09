@@ -5,6 +5,9 @@ import { styles } from "../../styles/Form";
 import axios from "axios";
 import DropDownPicker from "react-native-dropdown-picker";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const AddCartItems = ({ route, navigation }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -49,7 +52,7 @@ const AddCartItems = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/machines/${shop_admin_id}`,
+          `${API_BASE_URL}/api/customers/machines/${shop_admin_id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -77,7 +80,7 @@ const AddCartItems = ({ route, navigation }) => {
       const token = await AsyncStorage.getItem("customerToken");
 
       const response = await axios.post(
-        `${"http://192.168.133.240:8000"}/api/customers/cart/add`,
+        `${`${API_BASE_URL}/api/customers/login`}/api/customers/cart/add`,
         {
           name: name,
           quantity: quantity,

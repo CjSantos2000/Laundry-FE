@@ -6,6 +6,9 @@ import axios from "axios";
 import { Feather } from "@expo/vector-icons";
 import CarouselComponent from '../../styles/CustomerBanner';
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Dashboard = ({ navigation }) => {
   const [shopAdmins, setShopAdmins] = useState([]);
   const allRatings = shopAdmins.flatMap((admin) =>
@@ -25,7 +28,7 @@ const Dashboard = ({ navigation }) => {
         const token = await AsyncStorage.getItem("customerToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/customers/shop_admins`,
+          `${API_BASE_URL}/api/customers/shop_admins`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

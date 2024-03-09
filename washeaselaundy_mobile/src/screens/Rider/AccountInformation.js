@@ -13,6 +13,9 @@ import * as ImagePicker from "expo-image-picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const AccountInformation = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -81,7 +84,7 @@ const AccountInformation = ({ navigation }) => {
         });
       }
 
-      const apiEndpoint = `${"http://192.168.133.240:8000"}/api/riders/edit-profile`;
+      const apiEndpoint = `${API_BASE_URL}/api/riders/edit-profile`;
       const token = await AsyncStorage.getItem("riderToken");
 
       const response = await axios.post(apiEndpoint, formData, {

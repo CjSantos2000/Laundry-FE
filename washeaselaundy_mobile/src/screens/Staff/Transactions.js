@@ -11,6 +11,9 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const Transactions = ({ navigation, route }) => {
   const { result } = route.params;
   const [transactions, setTransactions] = useState([]);
@@ -23,7 +26,7 @@ const Transactions = ({ navigation, route }) => {
         const token = await AsyncStorage.getItem("staffToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/transactions`,
+          `${API_BASE_URL}/api/staffs/transactions`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

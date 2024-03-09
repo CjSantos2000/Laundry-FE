@@ -11,6 +11,9 @@ import { Card, Title, Paragraph } from "react-native-paper";
 import axios from "axios";
 import { styles } from "../../styles/Box";
 
+import Constants from 'expo-constants';
+const API_BASE_URL = Constants.manifest.extra.API_BASE_URL;
+
 const ViewTransaction = ({ route, navigation }) => {
   const { transaction_id, result } = route.params;
   const [transaction, setTransaction] = useState(null);
@@ -22,7 +25,7 @@ const ViewTransaction = ({ route, navigation }) => {
         const token = await AsyncStorage.getItem("staffToken");
 
         const response = await axios.get(
-          `${"http://192.168.133.240:8000"}/api/staffs/transactions/${transaction_id}`,
+          `${API_BASE_URL}/api/staffs/transactions/${transaction_id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
