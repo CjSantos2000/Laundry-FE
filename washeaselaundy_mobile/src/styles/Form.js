@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 5,
+    marginBottom: 20,
     textAlign: "right",
   },
   description: {
@@ -60,4 +60,7 @@ export const styles = StyleSheet.create({
     textDecorationLine: "underline",
     color: "blue",
   },
+
+
+
 });
